@@ -4,15 +4,15 @@ AL Lail App adalah aplikasi web based yang dikembangkan oleh Nusantara Technolog
 
 ## Copyright
 
-Hak cipta sepuhnya dimiliki oleh PT Nusantara Technology , dibawah merek dagang Networkdelivr.my.id
+Hak cipta sepuhnya dimiliki oleh PT Nusantara Technology , dibawah merek dagang Networkdelivr.my.id;
 Copyright 2025, Februari 24.
 
 ## Who we are
 
 Kami adalah perusahaan yang bergerak dibidang teknologi yang menjunjung tinggi nilai keberlanjutan
 
--   Organisasi: [https://](https://bektinuswantara.org/)
--   Networkdelivr.my.id [https://](https://networkdelivr.my.id/)
+-   Organisasi: [https://bektinuswantara.org](https://bektinuswantara.org/)
+-   Networkdelivr.my.id [https://networkdelivr.my.id](https://networkdelivr.my.id/)
 
 ## Support and customer care
 
