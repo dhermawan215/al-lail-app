@@ -1,539 +1,628 @@
 @extends('layouts.app')
 @section('app_content')
-<div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-        <div class="col-lg-8 mb-4 order-0">
-            <div class="card">
-                <div class="d-flex align-items-end row">
-                    <div class="col-sm-7">
-                        <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                            <p class="mb-4">
-                                You have done <span class="fw-bold">72%</span> more sales today.
-                                Check your new badge in
-                                your profile.
-                            </p>
-
-                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View
-                                Badges</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-5 text-center text-sm-left">
-                        <div class="card-body pb-0 px-0 px-md-4">
-                            <img src="../assets/img/illustrations/man-with-laptop-light.png"
-                                height="140" alt="View Badge User"
-                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
-                                data-app-light-img="illustrations/man-with-laptop-light.png" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-4 order-1">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div
-                                class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="../assets/img/icons/unicons/chart-success.png"
-                                        alt="chart success" class="rounded" />
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt3"
-                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end"
-                                        aria-labelledby="cardOpt3">
-                                        <a class="dropdown-item" href="javascript:void(0);">View
-                                            More</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fw-semibold d-block mb-1">Profit</span>
-                            <h3 class="card-title mb-2">$12,628</h3>
-                            <small class="text-success fw-semibold"><i
-                                    class="bx bx-up-arrow-alt"></i> +72.80%</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12 col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div
-                                class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="../assets/img/icons/unicons/wallet-info.png"
-                                        alt="Credit Card" class="rounded" />
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt6"
-                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end"
-                                        aria-labelledby="cardOpt6">
-                                        <a class="dropdown-item" href="javascript:void(0);">View
-                                            More</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span>Sales</span>
-                            <h3 class="card-title text-nowrap mb-1">$4,679</h3>
-                            <small class="text-success fw-semibold"><i
-                                    class="bx bx-up-arrow-alt"></i> +28.42%</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Total Revenue -->
-        <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
-            <div class="card">
-                <div class="row row-bordered g-0">
-                    <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
-                        <div id="totalRevenueChart" class="px-2"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card-body">
-                            <div class="text-center">
-                                <div class="dropdown">
-                                    <button class="btn btn-sm btn-outline-primary dropdown-toggle"
-                                        type="button" id="growthReportId"
-                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        2022
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end"
-                                        aria-labelledby="growthReportId">
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">2021</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">2020</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">2019</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="growthChart"></div>
-                        <div class="text-center fw-semibold pt-3 mb-2">62% Company Growth</div>
-
-                        <div
-                            class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
-                            <div class="d-flex">
-                                <div class="me-2">
-                                    <span class="badge bg-label-primary p-2"><i
-                                            class="bx bx-dollar text-primary"></i></span>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <small>2022</small>
-                                    <h6 class="mb-0">$32.5k</h6>
-                                </div>
-                            </div>
-                            <div class="d-flex">
-                                <div class="me-2">
-                                    <span class="badge bg-label-info p-2"><i
-                                            class="bx bx-wallet text-info"></i></span>
-                                </div>
-                                <div class="d-flex flex-column">
-                                    <small>2021</small>
-                                    <h6 class="mb-0">$41.2k</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Total Revenue -->
-        <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
-            <div class="row">
-                <div class="col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div
-                                class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="../assets/img/icons/unicons/paypal.png"
-                                        alt="Credit Card" class="rounded" />
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt4"
-                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-end"
-                                        aria-labelledby="cardOpt4">
-                                        <a class="dropdown-item" href="javascript:void(0);">View
-                                            More</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="d-block mb-1">Payments</span>
-                            <h3 class="card-title text-nowrap mb-2">$2,456</h3>
-                            <small class="text-danger fw-semibold"><i
-                                    class="bx bx-down-arrow-alt"></i> -14.82%</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div
-                                class="card-title d-flex align-items-start justify-content-between">
-                                <div class="avatar flex-shrink-0">
-                                    <img src="../assets/img/icons/unicons/cc-primary.png"
-                                        alt="Credit Card" class="rounded" />
-                                </div>
-                                <div class="dropdown">
-                                    <button class="btn p-0" type="button" id="cardOpt1"
-                                        data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                                        <a class="dropdown-item" href="javascript:void(0);">View
-                                            More</a>
-                                        <a class="dropdown-item"
-                                            href="javascript:void(0);">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="fw-semibold d-block mb-1">Transactions</span>
-                            <h3 class="card-title mb-2">$14,857</h3>
-                            <small class="text-success fw-semibold"><i
-                                    class="bx bx-up-arrow-alt"></i> +28.14%</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div
-                                class="d-flex justify-content-between flex-sm-row flex-column gap-3">
-                                <div
-                                    class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
-                                    <div class="card-title">
-                                        <h5 class="text-nowrap mb-2">Profile Report</h5>
-                                        <span class="badge bg-label-warning rounded-pill">Year
-                                            2021</span>
-                                    </div>
-                                    <div class="mt-sm-auto">
-                                        <small class="text-success text-nowrap fw-semibold"><i
-                                                class="bx bx-chevron-up"></i> 68.2%</small>
-                                        <h3 class="mb-0">$84,686k</h3>
-                                    </div>
-                                </div>
-                                <div id="profileReportChart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
-    <div class="row">
-        <!-- Order Statistics -->
-        <div class="col-md-6 col-lg-4 col-xl-4 order-0 mb-4">
-            <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between pb-0">
-                    <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Order Statistics</h5>
-                        <small class="text-muted">42.82k Total Sales</small>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn p-0" type="button" id="orederStatistics"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end"
-                            aria-labelledby="orederStatistics">
-                            <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="d-flex flex-column align-items-center gap-1">
-                            <h2 class="mb-2">8,258</h2>
-                            <span>Total Orders</span>
-                        </div>
-                        <div id="orderStatisticsChart"></div>
-                    </div>
-                    <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded bg-label-primary"><i
-                                        class="bx bx-mobile-alt"></i></span>
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">Electronic</h6>
-                                    <small class="text-muted">Mobile, Earbuds, TV</small>
-                                </div>
-                                <div class="user-progress">
-                                    <small class="fw-semibold">82.5k</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded bg-label-success"><i
-                                        class="bx bx-closet"></i></span>
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">Fashion</h6>
-                                    <small class="text-muted">T-shirt, Jeans, Shoes</small>
-                                </div>
-                                <div class="user-progress">
-                                    <small class="fw-semibold">23.8k</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded bg-label-info"><i
-                                        class="bx bx-home-alt"></i></span>
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">Decor</h6>
-                                    <small class="text-muted">Fine Art, Dining</small>
-                                </div>
-                                <div class="user-progress">
-                                    <small class="fw-semibold">849k</small>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <span class="avatar-initial rounded bg-label-secondary"><i
-                                        class="bx bx-football"></i></span>
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <h6 class="mb-0">Sports</h6>
-                                    <small class="text-muted">Football, Cricket Kit</small>
-                                </div>
-                                <div class="user-progress">
-                                    <small class="fw-semibold">99</small>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--/ Order Statistics -->
+    <!-- /.content-header -->
 
-        <!-- Expense Overview -->
-        <div class="col-md-6 col-lg-4 order-1 mb-4">
-            <div class="card h-100">
-                <div class="card-header">
-                    <ul class="nav nav-pills" role="tablist">
-                        <li class="nav-item">
-                            <button type="button" class="nav-link active" role="tab"
-                                data-bs-toggle="tab" data-bs-target="#navs-tabs-line-card-income"
-                                aria-controls="navs-tabs-line-card-income" aria-selected="true">
-                                Income
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link"
-                                role="tab">Expenses</button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link"
-                                role="tab">Profit</button>
-                        </li>
-                    </ul>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>150</h3>
+
+                            <p>New Orders</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
-                <div class="card-body px-0">
-                    <div class="tab-content p-0">
-                        <div class="tab-pane fade show active" id="navs-tabs-line-card-income"
-                            role="tabpanel">
-                            <div class="d-flex p-4 pt-3">
-                                <div class="avatar flex-shrink-0 me-3">
-                                    <img src="../assets/img/icons/unicons/wallet.png"
-                                        alt="User" />
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>Bounce Rate</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>44</h3>
+
+                            <p>User Registrations</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>65</h3>
+
+                            <p>Unique Visitors</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <!-- Custom tabs (Charts with tabs)-->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-chart-pie mr-1"></i>
+                                Sales
+                            </h3>
+                            <div class="card-tools">
+                                <ul class="nav nav-pills ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content p-0">
+                                <!-- Morris chart - Sales -->
+                                <div class="chart tab-pane active" id="revenue-chart"
+                                    style="position: relative; height: 300px;">
+                                    <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
                                 </div>
-                                <div>
-                                    <small class="text-muted d-block">Total Balance</small>
-                                    <div class="d-flex align-items-center">
-                                        <h6 class="mb-0 me-1">$459.10</h6>
-                                        <small class="text-success fw-semibold">
-                                            <i class="bx bx-chevron-up"></i>
-                                            42.9%
-                                        </small>
+                                <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                                </div>
+                            </div>
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- DIRECT CHAT -->
+                    <div class="card direct-chat direct-chat-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Direct Chat</h3>
+
+                            <div class="card-tools">
+                                <span title="3 New Messages" class="badge badge-primary">3</span>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+                                    <i class="fas fa-comments"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <!-- Conversations are loaded here -->
+                            <div class="direct-chat-messages">
+                                <!-- Message. Default to the left -->
+                                <div class="direct-chat-msg">
+                                    <div class="direct-chat-infos clearfix">
+                                        <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                        <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                        alt="message user image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                        Is this template really for free? That's unbelievable!
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                </div>
+                                <!-- /.direct-chat-msg -->
+
+                                <!-- Message to the right -->
+                                <div class="direct-chat-msg right">
+                                    <div class="direct-chat-infos clearfix">
+                                        <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                        <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                        alt="message user image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                        You better believe it!
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                </div>
+                                <!-- /.direct-chat-msg -->
+
+                                <!-- Message. Default to the left -->
+                                <div class="direct-chat-msg">
+                                    <div class="direct-chat-infos clearfix">
+                                        <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                        <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg"
+                                        alt="message user image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                        Working with AdminLTE on a great new app! Wanna join?
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                </div>
+                                <!-- /.direct-chat-msg -->
+
+                                <!-- Message to the right -->
+                                <div class="direct-chat-msg right">
+                                    <div class="direct-chat-infos clearfix">
+                                        <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                        <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                    </div>
+                                    <!-- /.direct-chat-infos -->
+                                    <img class="direct-chat-img" src="dist/img/user3-128x128.jpg"
+                                        alt="message user image">
+                                    <!-- /.direct-chat-img -->
+                                    <div class="direct-chat-text">
+                                        I would love to.
+                                    </div>
+                                    <!-- /.direct-chat-text -->
+                                </div>
+                                <!-- /.direct-chat-msg -->
+
+                            </div>
+                            <!--/.direct-chat-messages-->
+
+                            <!-- Contacts are loaded here -->
+                            <div class="direct-chat-contacts">
+                                <ul class="contacts-list">
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user1-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    Count Dracula
+                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">How have you been? I
+                                                    was...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user7-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    Sarah Doe
+                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">I will be waiting for...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user3-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    Nadia Jolie
+                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">I'll call you back at...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user5-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    Nora S. Vans
+                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">Where is your new...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user6-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    John K.
+                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">Can I take a look at...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                    <li>
+                                        <a href="#">
+                                            <img class="contacts-list-img" src="dist/img/user8-128x128.jpg"
+                                                alt="User Avatar">
+
+                                            <div class="contacts-list-info">
+                                                <span class="contacts-list-name">
+                                                    Kenneth M.
+                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                </span>
+                                                <span class="contacts-list-msg">Never mind I found...</span>
+                                            </div>
+                                            <!-- /.contacts-list-info -->
+                                        </a>
+                                    </li>
+                                    <!-- End Contact Item -->
+                                </ul>
+                                <!-- /.contacts-list -->
+                            </div>
+                            <!-- /.direct-chat-pane -->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <form action="#" method="post">
+                                <div class="input-group">
+                                    <input type="text" name="message" placeholder="Type Message ..."
+                                        class="form-control">
+                                    <span class="input-group-append">
+                                        <button type="button" class="btn btn-primary">Send</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.card-footer-->
+                    </div>
+                    <!--/.direct-chat -->
+
+                    <!-- TO DO List -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="ion ion-clipboard mr-1"></i>
+                                To Do List
+                            </h3>
+
+                            <div class="card-tools">
+                                <ul class="pagination pagination-sm">
+                                    <li class="page-item"><a href="#" class="page-link">&laquo;</a>
+                                    </li>
+                                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                    <li class="page-item"><a href="#" class="page-link">&raquo;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <ul class="todo-list" data-widget="todo-list">
+                                <li>
+                                    <!-- drag handle -->
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <!-- checkbox -->
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo1" id="todoCheck1">
+                                        <label for="todoCheck1"></label>
+                                    </div>
+                                    <!-- todo text -->
+                                    <span class="text">Design a nice theme</span>
+                                    <!-- Emphasis label -->
+                                    <small class="badge badge-danger"><i class="far fa-clock"></i> 2
+                                        mins</small>
+                                    <!-- General tools such as edit or delete-->
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
+                                        <label for="todoCheck2"></label>
+                                    </div>
+                                    <span class="text">Make the theme responsive</span>
+                                    <small class="badge badge-info"><i class="far fa-clock"></i> 4
+                                        hours</small>
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo3" id="todoCheck3">
+                                        <label for="todoCheck3"></label>
+                                    </div>
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="badge badge-warning"><i class="far fa-clock"></i> 1
+                                        day</small>
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo4" id="todoCheck4">
+                                        <label for="todoCheck4"></label>
+                                    </div>
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="badge badge-success"><i class="far fa-clock"></i> 3
+                                        days</small>
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo5" id="todoCheck5">
+                                        <label for="todoCheck5"></label>
+                                    </div>
+                                    <span class="text">Check your messages and notifications</span>
+                                    <small class="badge badge-primary"><i class="far fa-clock"></i> 1
+                                        week</small>
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="handle">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </span>
+                                    <div class="icheck-primary d-inline ml-2">
+                                        <input type="checkbox" value="" name="todo6" id="todoCheck6">
+                                        <label for="todoCheck6"></label>
+                                    </div>
+                                    <span class="text">Let theme shine like a star</span>
+                                    <small class="badge badge-secondary"><i class="far fa-clock"></i> 1
+                                        month</small>
+                                    <div class="tools">
+                                        <i class="fas fa-edit"></i>
+                                        <i class="fas fa-trash-o"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add
+                                item</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </section>
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+                <section class="col-lg-5 connectedSortable">
+
+                    <!-- Map card -->
+                    <div class="card bg-gradient-primary">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">
+                                <i class="fas fa-map-marker-alt mr-1"></i>
+                                Visitors
+                            </h3>
+                            <!-- card tools -->
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
+                                    <i class="far fa-calendar-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse"
+                                    title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                            <!-- /.card-tools -->
+                        </div>
+                        <div class="card-body">
+                            <div id="world-map" style="height: 250px; width: 100%;"></div>
+                        </div>
+                        <!-- /.card-body-->
+                        <div class="card-footer bg-transparent">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-1"></div>
+                                    <div class="text-white">Visitors</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-2"></div>
+                                    <div class="text-white">Online</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <div id="sparkline-3"></div>
+                                    <div class="text-white">Sales</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- solid sales graph -->
+                    <div class="card bg-gradient-info">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">
+                                <i class="fas fa-th mr-1"></i>
+                                Sales Graph
+                            </h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas class="chart" id="line-chart"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer bg-transparent">
+                            <div class="row">
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="20"
+                                        data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">Mail-Orders</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="50"
+                                        data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">Online</div>
+                                </div>
+                                <!-- ./col -->
+                                <div class="col-4 text-center">
+                                    <input type="text" class="knob" data-readonly="true" value="30"
+                                        data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                                    <div class="text-white">In-Store</div>
+                                </div>
+                                <!-- ./col -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- Calendar -->
+                    <div class="card bg-gradient-success">
+                        <div class="card-header border-0">
+
+                            <h3 class="card-title">
+                                <i class="far fa-calendar-alt"></i>
+                                Calendar
+                            </h3>
+                            <!-- tools card -->
+                            <div class="card-tools">
+                                <!-- button with a dropdown -->
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" data-offset="-52">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                        <a href="#" class="dropdown-item">Add new event</a>
+                                        <a href="#" class="dropdown-item">Clear events</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">View calendar</a>
                                     </div>
                                 </div>
+                                <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                                    <i class="fas fa-times"></i>
+                                </button>
                             </div>
-                            <div id="incomeChart"></div>
-                            <div class="d-flex justify-content-center pt-4 gap-2">
-                                <div class="flex-shrink-0">
-                                    <div id="expensesOfWeek"></div>
-                                </div>
-                                <div>
-                                    <p class="mb-n1 mt-1">Expenses This Week</p>
-                                    <small class="text-muted">$39 less than last week</small>
-                                </div>
-                            </div>
+                            <!-- /. tools -->
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/ Expense Overview -->
-
-        <!-- Transactions -->
-        <div class="col-md-6 col-lg-4 order-2 mb-4">
-            <div class="card h-100">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="card-title m-0 me-2">Transactions</h5>
-                    <div class="dropdown">
-                        <button class="btn p-0" type="button" id="transactionID"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end"
-                            aria-labelledby="transactionID">
-                            <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                            <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
+                        <!-- /.card-header -->
+                        <div class="card-body pt-0">
+                            <!--The calendar -->
+                            <div id="calendar" style="width: 100%"></div>
                         </div>
+                        <!-- /.card-body -->
                     </div>
-                </div>
-                <div class="card-body">
-                    <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/paypal.png" alt="User"
-                                    class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Paypal</small>
-                                    <h6 class="mb-0">Send money</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">+82.6</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/wallet.png" alt="User"
-                                    class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Wallet</small>
-                                    <h6 class="mb-0">Mac'D</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">+270.69</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/chart.png" alt="User"
-                                    class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Transfer</small>
-                                    <h6 class="mb-0">Refund</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">+637.91</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/cc-success.png"
-                                    alt="User" class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Credit Card</small>
-                                    <h6 class="mb-0">Ordered Food</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">-838.71</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/wallet.png" alt="User"
-                                    class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Wallet</small>
-                                    <h6 class="mb-0">Starbucks</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">+203.33</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="d-flex">
-                            <div class="avatar flex-shrink-0 me-3">
-                                <img src="../assets/img/icons/unicons/cc-warning.png"
-                                    alt="User" class="rounded" />
-                            </div>
-                            <div
-                                class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                <div class="me-2">
-                                    <small class="text-muted d-block mb-1">Mastercard</small>
-                                    <h6 class="mb-0">Ordered Food</h6>
-                                </div>
-                                <div class="user-progress d-flex align-items-center gap-1">
-                                    <h6 class="mb-0">-92.45</h6>
-                                    <span class="text-muted">USD</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- /.card -->
+                </section>
+                <!-- right col -->
             </div>
-        </div>
-        <!--/ Transactions -->
-    </div>
-</div>
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 @endsection

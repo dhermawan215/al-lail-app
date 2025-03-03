@@ -1,59 +1,40 @@
 <!DOCTYPE html>
-
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default"
-    data-template="vertical-menu-template-free">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-
-    <title>Al Lail App | {{ $title }} </title>
-
-    <meta name="description" content="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Al-lail App | {{ $title }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description"
+        content="al lail adalah aplikasi pencatatan laporan keuangan khusus masjid dan mushola, tersedia secara gratis">
+    <!-- Google Font: Source Sans Pro -->
     @include('layouts.styles')
     @yield('app_styles')
-
 </head>
 
-<body>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-            <!-- Menu -->
-            @include('layouts.sidebar')
-            <!-- / Menu -->
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        @include('layouts.navbar')
+        <!-- /.navbar -->
 
-            <!-- Layout container -->
-            <div class="layout-page">
-                <!-- Navbar -->
-                @include('layouts.navbar')
-                <!-- / Navbar -->
-                <!-- Content wrapper -->
-                <div class="content-wrapper">
-                    <!-- Content -->
+        <!-- Main Sidebar Container -->
+        @include('layouts.sidebar')
 
-                    @yield('app_content')
-                    <!-- / Content -->
-
-                    <!-- Footer -->
-                    @include('layouts.footer')
-                    <!-- / Footer -->
-
-                    <div class="content-backdrop fade"></div>
-                </div>
-                <!-- Content wrapper -->
-            </div>
-            <!-- / Layout page -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @yield('app_content')
         </div>
+        <!-- /.content-wrapper -->
+        @include('layouts.footer')
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- / Layout wrapper -->
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
     @include('layouts.scripts')
     @stack('app_scripts')
-
 </body>
 
 </html>
