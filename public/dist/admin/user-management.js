@@ -69,9 +69,59 @@ var Index = (function () {
         });
     };
 
+    var handleUserActive = function () {
+        $(document).on("change", ".cbx-active", function () {
+            if ($(this).is(":checked")) {
+                const cbxVal = $(this).data("cbxs");
+                const activeVal = "1";
+
+                $.ajax({
+                    type: "POST",
+                    url: `${url}/admin/users-management/user-active`,
+                    data: {
+                        _token: csrf_token,
+                        ivwx: cbxVal,
+                        active: activeVal,
+                    },
+                    success: function (response) {
+                        toastr.success(response.message);
+                        setTimeout(() => {
+                            table.ajax.reload();
+                        }, 1500);
+                    },
+                    error: function (response) {
+                        toastr.error(response.message);
+                    },
+                });
+            } else {
+                const cbxVal = $(this).data("cbxs");
+                const activeVal = "0";
+                $.ajax({
+                    type: "POST",
+                    url: `${url}/admin/users-management/user-active`,
+                    data: {
+                        _token: csrf_token,
+                        ivwx: cbxVal,
+                        active: activeVal,
+                    },
+                    success: function (response) {
+                        toastr.success(response.message);
+                        setTimeout(() => {
+                            table.ajax.reload();
+                        }, 1500);
+                    },
+                    error: function (response) {
+                        toastr.error(response.message);
+                    },
+                });
+            }
+        });
+    };
+
     return {
         init: function () {
             handleDataTable();
+            handleUserActive();
         },
     };
 })();

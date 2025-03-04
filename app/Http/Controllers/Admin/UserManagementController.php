@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Repositories\UserManagementRepo;
 use App\Traits\CustomEncrypt;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -13,6 +14,12 @@ class UserManagementController extends Controller
     use CustomEncrypt;
     protected $url;
     protected $title = 'User Management';
+    protected $userRepo;
+
+    public function __construct(UserManagementRepo $userManagementRepo)
+    {
+        $this->userRepo = $userManagementRepo;
+    }
 
     public function index(): View
     {
@@ -61,7 +68,7 @@ class UserManagementController extends Controller
                 $cbx = 'checked';
             }
             $data['verified'] = $verified;
-            $data['active'] = '<input type="checkbox" class="form-control" ' . $cbx . ' data-cbxs=' . $this->encryptData($value->id) . ' >';
+            $data['active'] = '<input type="checkbox" class="form-control cbx-active" ' . $cbx . ' data-cbxs=' . $this->encryptData($value->id) . ' >';
             $arr[] = $data;
             $i++;
         }
@@ -72,5 +79,19 @@ class UserManagementController extends Controller
             'recordsFiltered' => $recordsFiltered,
             'data' => $arr,
         ]);
+    }
+    /**
+     * method for  change activation user
+     */
+    public function changeUserActive(Request $request)
+    {
+        $id = $this->decryptData($request->ivwx);
+        $active = $request->active;
+        try {
+            $changeActive = $this->userRepo->changeActive(['id' => $id, 'active' => $active]);
+            return \response()->json(['success' => true, 'message' => 'user active change'], 200);
+        } catch (\Throwable $th) {
+            return \response()->json(['success' => false, 'message' => 'error when execute request'], 500);
+        }
     }
 }
