@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryTransaction;
+use App\Http\Controllers\Admin\CategoryTransactionController;
 use App\Http\Controllers\Admin\UserManagementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -26,7 +26,12 @@ Route::prefix('admin')->group(function () {
         Route::post('/users-management/user-active', 'changeUserActive');
     });
     //admin category controller
-    Route::controller(CategoryTransaction::class)->group(function () {
+    Route::controller(CategoryTransactionController::class)->group(function () {
         Route::get('/category-transaction', 'index')->name('admin.category_transaction');
+        Route::post('/category-transaction/list', 'listData');
+        Route::post('/category-transaction/save', 'store');
+        Route::post('/category-transaction/edit', 'edit');
+        Route::post('/category-transaction/update', 'update');
+        Route::post('/category-transaction/delete', 'destroy');
     });
 });

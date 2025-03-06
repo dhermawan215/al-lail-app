@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-
 trait CustomEncrypt
 {
     /**
@@ -37,5 +36,15 @@ trait CustomEncrypt
         $idKey = base64_decode($explodeSrtingToken[1]);
         //return key data
         return $idKey;
+    }
+    /**
+     * decrypt array data
+     * with implement method decryptData
+     * @param array with encyrpt data
+     * @return array
+     */
+    public function decryptArrayData($tokens)
+    {
+        return array_map([$this, 'decryptData'], $tokens);
     }
 }

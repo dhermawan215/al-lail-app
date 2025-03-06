@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
+                            <a href="{{route('admin.category_transaction')}}" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category Transaction</p>
                             </a>
