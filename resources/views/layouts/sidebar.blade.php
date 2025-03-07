@@ -78,7 +78,7 @@
                 </li>
                 <hr>
                 <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Admin
@@ -87,13 +87,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('admin.users_management')}}" class="nav-link active">
+                            <a href="{{route('admin.users_management')}}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User Management</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.category_transaction')}}" class="nav-link active">
+                            <a href="{{route('admin.category_transaction')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category Transaction</p>
                             </a>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="{{route('admin.system_log')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>System Log</p>
                             </a>

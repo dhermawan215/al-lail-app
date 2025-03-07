@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryTransactionController;
-use App\Http\Controllers\Admin\UserManagementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthenticatedController;
+use App\Http\Controllers\Admin\SystemLogController;
+use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\Admin\CategoryTransactionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,5 +34,10 @@ Route::prefix('admin')->group(function () {
         Route::post('/category-transaction/edit', 'edit');
         Route::post('/category-transaction/update', 'update');
         Route::post('/category-transaction/delete', 'destroy');
+    });
+    //admin system log controller
+    Route::controller(SystemLogController::class)->group(function () {
+        Route::get('/system-log', 'index')->name('admin.system_log');
+        Route::post('/system-log/list', 'listData');
     });
 });
