@@ -9,10 +9,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Repositories\CategoryTransactionRepository;
 use App\Models\CategoryTransaction as ModelsCategoryTransaction;
+use App\Traits\SysLogCapture;
 
 class CategoryTransactionController extends Controller
 {
     use CustomEncrypt;
+    use SysLogCapture;
     protected $url;
     protected $title = 'Category Transaction';
     protected $categoryTrRepo;
@@ -30,7 +32,7 @@ class CategoryTransactionController extends Controller
      * method for handle list datatable
      * @param Request $request 
      */
-    public function ListData(Request $request)
+    public function listData(Request $request)
     {
         $draw = $request['draw'];
         $offset = $request['start'] ? $request['start'] : 0;
@@ -85,6 +87,17 @@ class CategoryTransactionController extends Controller
             $this->categoryTrRepo->saveData($request);
             return \response()->json(['success' => true, 'message' => 'Data has been saved'], 200);
         } catch (\Throwable $th) {
+            //create log
+            $dataLog = [
+                'user_id' => null,
+                'email' => null,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $th,
+                'status' => 'error',
+                'info' => 'system',
+            ];
+            $this->captureLog($dataLog);
             return \response()->json(['success' => \false, 'message' => 'Error, when try to save'], 500);
         }
     }
@@ -103,6 +116,16 @@ class CategoryTransactionController extends Controller
             ];
             return \response()->json(['success' => true, 'data' => $response], 200);
         } catch (\Throwable $th) {
+            $dataLog = [
+                'user_id' => null,
+                'email' => null,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $th,
+                'status' => 'error',
+                'info' => 'system',
+            ];
+            $this->captureLog($dataLog);
             return \response()->json(['success' => false], 500);
         }
     }
@@ -129,6 +152,16 @@ class CategoryTransactionController extends Controller
             $this->categoryTrRepo->updateData($data);
             return \response()->json(['success' => true, 'message' => 'Data has been updated'], 200);
         } catch (\Throwable $th) {
+            $dataLog = [
+                'user_id' => null,
+                'email' => null,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $th,
+                'status' => 'error',
+                'info' => 'system',
+            ];
+            $this->captureLog($dataLog);
             return \response()->json(['success' => false, 'message' => 'Something went wrong'], 500);
         }
     }
@@ -143,6 +176,16 @@ class CategoryTransactionController extends Controller
             $this->categoryTrRepo->deleteDatas($ids);
             return \response()->json(['success' => true, 'message' => 'Data has been deleted'], 200);
         } catch (\Throwable $th) {
+            $dataLog = [
+                'user_id' => null,
+                'email' => null,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $th,
+                'status' => 'error',
+                'info' => 'system',
+            ];
+            $this->captureLog($dataLog);
             return \response()->json(['success' => false, 'message' => 'Something went wrong'], 500);
         }
     }

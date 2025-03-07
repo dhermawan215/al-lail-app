@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Repositories\UserManagementRepo;
 use App\Traits\CustomEncrypt;
+use App\Traits\SysLogCapture;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class UserManagementController extends Controller
 {
     use CustomEncrypt;
+    use SysLogCapture;
     protected $url;
     protected $title = 'User Management';
     protected $userRepo;
@@ -91,6 +93,16 @@ class UserManagementController extends Controller
             $changeActive = $this->userRepo->changeActive(['id' => $id, 'active' => $active]);
             return \response()->json(['success' => true, 'message' => 'user active change'], 200);
         } catch (\Throwable $th) {
+            $dataLog = [
+                'user_id' => null,
+                'email' => null,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $th,
+                'status' => 'error',
+                'info' => 'system',
+            ];
+            $this->captureLog($dataLog);
             return \response()->json(['success' => false, 'message' => 'error when execute request'], 500);
         }
     }
