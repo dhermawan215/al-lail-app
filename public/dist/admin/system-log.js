@@ -39,13 +39,13 @@ var Index = (function () {
             },
             columns: [
                 { data: "rnum", orderable: false },
-                { data: "name", orderable: false },
+                { data: "email", orderable: false },
                 { data: "ip", orderable: false },
                 { data: "agent", orderable: false },
                 { data: "message", orderable: false },
                 { data: "status", orderable: false },
                 { data: "info", orderable: false },
-                { data: "action", orderable: false },
+                { data: "date", orderable: false },
             ],
             drawCallback: function (settings) {},
         });

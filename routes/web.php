@@ -12,14 +12,19 @@ Route::get('/', function () {
 });
 
 //auth routes
-Route::get('/login', [AuthenticatedController::class, 'login'])->name('login');
-
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthenticatedController::class, 'login'])->name('login');
+    Route::post('/login/process', [AuthenticatedController::class, 'processedLogin']);
+});
 //dashboard routes
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthenticatedController::class, 'logout']);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 
 
 //Route for admin
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
     //admin user management route
     Route::controller(UserManagementController::class)->group(function () {
         Route::get('/users-management', 'index')->name('admin.users_management');

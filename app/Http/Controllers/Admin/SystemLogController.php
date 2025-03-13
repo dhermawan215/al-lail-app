@@ -39,6 +39,7 @@ class SystemLogController extends Controller
         $recordsFiltered = $query->count();
         $resData = $query->skip($offset)
             ->take($limit)
+            ->latest()
             ->get();
         $recordsTotal = $resData->count();
 
@@ -48,11 +49,16 @@ class SystemLogController extends Controller
 
         foreach ($resData as $key => $value) {
             $data['rnum'] = $i;
-            $data['email'] = $value->email;
+            $data['email'] = $value->email ? $value->email : 'no data';
             $data['ip'] = $value->ip;
             $data['agent'] = $value->agent;
             $data['message'] = $value->message;
-            $data['status'] = '<span class="badge badge-danger">' . $value->status . '</span>';
+            if ('failed' == $value->status) {
+                $badge = 'badge-danger';
+            } else {
+                $badge = 'badge-success';
+            }
+            $data['status'] = '<span class="badge ' . $badge . '">' . $value->status . '</span>';
             $data['info'] = '<span class="badge badge-info">' . $value->info . '</span>';
             $data['date'] = $value->capture_date;
             $arr[] = $data;

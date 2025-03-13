@@ -3,7 +3,7 @@
     <a href="#" class="brand-link">
         <img src="{{ asset('temp/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
+        <span class="brand-text font-weight-light">Al Lail App</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,7 +15,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
             </div>
         </div>
 
@@ -87,13 +87,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('admin.users_management')}}" class="nav-link ">
+                            <a href="{{ route('admin.users_management') }}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>User Management</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.category_transaction')}}" class="nav-link">
+                            <a href="{{ route('admin.category_transaction') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category Transaction</p>
                             </a>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.system_log')}}" class="nav-link">
+                            <a href="{{ route('admin.system_log') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>System Log</p>
                             </a>
