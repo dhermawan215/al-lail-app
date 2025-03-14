@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticatedController;
 use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\CategoryTransactionController;
+use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,10 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthenticatedController::class, 'logout']);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/user/profile', [UserProfileController::class, 'profile'])->name('profile');
+    Route::post('/user/profile/update-password', [UserProfileController::class, 'updatePassword']);
+    Route::post('/user/profile/update-profile', [UserProfileController::class, 'updateProfile']);
+    Route::post('/user/profile/update-email', [UserProfileController::class, 'updateEmail']);
 });
 
 
