@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticatedController;
 use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\CategoryTransactionController;
+use App\Http\Controllers\Admin\FinancialPostManagement;
 use App\Http\Controllers\Admin\MasjidManagementController;
 use App\Http\Controllers\UserProfileController;
 
@@ -57,5 +58,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::post('/masjid-management/list', 'ListData');
         Route::post('/masjid-management/verifiying', 'verifiying');
         Route::post('/masjid-management/detail', 'detail');
+    });
+    //admin financial post management
+    Route::controller(FinancialPostManagement::class)->group(function () {
+        Route::get('/financial-post', 'index')->name('admin.financial_post');
+        Route::post('/financial-post/list', 'ListData');
     });
 });

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('masjid_id');
             $table->string('post_name')->nullable();
-            $table->bigInteger('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

@@ -79,7 +79,7 @@
                 <hr>
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fa fa-th-large"></i>
                         <p>
                             Admin
                             <i class="right fas fa-angle-left"></i>
@@ -102,6 +102,12 @@
                             <a href="{{ route('admin.masjid_management') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Masjid Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.financial_post') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Financial Post</p>
                             </a>
                         </li>
                         <li class="nav-item">

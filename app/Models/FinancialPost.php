@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class FinancialPost extends Model
@@ -15,5 +16,12 @@ class FinancialPost extends Model
     public function financialPostToTransactions(): HasMany
     {
         return $this->hasMany(Transaction::class, 'financial_post_id', 'id');
+    }
+    /**
+     * financial post to masjid
+     */
+    public function financialToMasjid(): BelongsTo
+    {
+        return $this->belongsTo(Masjid::class, 'masjid_id', 'id');
     }
 }

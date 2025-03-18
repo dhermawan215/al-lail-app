@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Masjid extends Model
@@ -15,5 +16,12 @@ class Masjid extends Model
     public function masjidToUsers(): HasOne
     {
         return $this->hasOne(User::class, 'masjid_id', 'id');
+    }
+    /**
+     * relationship masjid to financial post
+     */
+    public function masjidToFinancial(): HasMany
+    {
+        return $this->hasMany(FinancialPost::class, 'masjid_id', 'id');
     }
 }
