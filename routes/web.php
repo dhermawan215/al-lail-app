@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticatedController;
 use App\Http\Controllers\Admin\SystemLogController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\CategoryTransactionController;
+use App\Http\Controllers\Admin\MasjidManagementController;
 use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
@@ -49,5 +50,12 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::controller(SystemLogController::class)->group(function () {
         Route::get('/system-log', 'index')->name('admin.system_log');
         Route::post('/system-log/list', 'listData');
+    });
+    //admin masjid management
+    Route::controller(MasjidManagementController::class)->group(function () {
+        Route::get('/masjid-management', 'index')->name('admin.masjid_management');
+        Route::post('/masjid-management/list', 'ListData');
+        Route::post('/masjid-management/verifiying', 'verifiying');
+        Route::post('/masjid-management/detail', 'detail');
     });
 });

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone_masjid')->nullable();
             $table->string('image')->nullable();
             $table->tinyInteger('verification_status')->default(0);
-            $table->timestamp('registered_at');
+            $table->timestamp('registered_at')->nullable();
             $table->timestamps();
         });
     }

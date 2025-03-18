@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('category_id');
             $table->bigInteger('financial_post_id')->nullable();
+            $table->bigInteger('masjid_id')->nullable();
             $table->double('amount')->nullable();
             $table->text('description')->nullable();
             $table->date('transaction_date')->nullable();
