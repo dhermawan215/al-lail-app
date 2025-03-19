@@ -18,6 +18,10 @@ Route::get('/', function () {
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthenticatedController::class, 'login'])->name('login');
     Route::post('/login/process', [AuthenticatedController::class, 'processedLogin']);
+    Route::get('/forgot-password', [AuthenticatedController::class, 'forgotPassword'])->name('forgot_password');
+    Route::post('/forgot-password/process', [AuthenticatedController::class, 'processingForgot'])->name('forgot_password_process');
+    Route::get('/forgot-password/success', [AuthenticatedController::class, 'forgotPasswordSuccess'])->name('forgot_password_success');
+    Route::get('/change-password/{token}', [AuthenticatedController::class, 'changePassword'])->name('change_password');
 });
 //dashboard routes
 Route::middleware('auth')->group(function () {

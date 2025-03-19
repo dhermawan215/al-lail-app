@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Al-lail App | Log in</title>
+    <title>Al-lail App | Success</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -22,45 +22,35 @@
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card">
+            <div class="card-header text-center ">
+                <h2 class="h1"> Al-Lail App</h2>
+            </div>
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Assalamualaikum, welcome to Al Lail App</p>
+                <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
 
-                <form action="javascript:;" method="post" id="login-form">
+                <form action="{{ route('forgot_password_process') }}" method="post" id="forgot-password">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" class="form-control" placeholder="enter your email">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-8">
-
-                        </div>
                         <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Request new password</button>
                         </div>
                         <!-- /.col -->
                     </div>
                 </form>
 
-                <p class="mb-1">
-                    <a href="{{ route('forgot_password') }}">I forgot my password</a>
+                <p class="mb-1 mt-3">
+                    <a href="{{ route('login') }}">Login</a> if you remember the password
                 </p>
-                <p class="mb-0">
-                    <a href="#" class="text-center">Register a new membership</a>
-                </p>
+
             </div>
             <!-- /.login-card-body -->
         </div>

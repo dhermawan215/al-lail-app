@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Traits\SysLogCapture;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class AuthenticatedController extends Controller
 {
@@ -68,5 +69,19 @@ class AuthenticatedController extends Controller
         $url = \url('/login');
 
         return \response()->json(['success' => \true, 'url' => $url], 200);
+    }
+    /**
+     * handle view forgot password
+     */
+    public function forgotPassword(): View
+    {
+        return view('auth.forgot-password');
+    }
+    /**
+     * handle view success forgot password
+     */
+    public function forgotPasswordSuccess(): View
+    {
+        return view('auth.success');
     }
 }
