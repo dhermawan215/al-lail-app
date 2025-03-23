@@ -19,9 +19,11 @@ Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthenticatedController::class, 'login'])->name('login');
     Route::post('/login/process', [AuthenticatedController::class, 'processedLogin']);
     Route::get('/forgot-password', [AuthenticatedController::class, 'forgotPassword'])->name('forgot_password');
-    Route::post('/forgot-password/process', [AuthenticatedController::class, 'processingForgot'])->name('forgot_password_process');
+    Route::post('/forgot-password/process', [AuthenticatedController::class, 'processForgotPassword'])->name('forgot_password_process');
     Route::get('/forgot-password/success', [AuthenticatedController::class, 'forgotPasswordSuccess'])->name('forgot_password_success');
-    Route::get('/change-password/{token}', [AuthenticatedController::class, 'changePassword'])->name('change_password');
+    Route::get('/forgot-password/check-email', [AuthenticatedController::class, 'checkEmail'])->name('forgot_password_check_email');
+    Route::get('/change-password/{token}', [AuthenticatedController::class, 'checkToken'])->name('check_token');
+    Route::put('/change-password/{token}/processing', [AuthenticatedController::class, 'processingChangePassword'])->name('processing_change_password');
 });
 //dashboard routes
 Route::middleware('auth')->group(function () {

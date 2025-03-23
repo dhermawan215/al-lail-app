@@ -108,7 +108,6 @@
                 text-align: center !important;
             }
         }
-
     </style>
     <!--[if mso
             ]><style>
@@ -126,63 +125,76 @@
         <![endif]-->
 </head>
 
-<body class="body" style="
+<body class="body"
+    style="
             margin: 0;
             background-color: #ffffff;
             padding: 0;
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
-    <table border="0" cellpadding="0" cellspacing="0" class="nl-container" role="presentation" style="
+    <table border="0" cellpadding="0" cellspacing="0" class="nl-container" role="presentation"
+        style="
                 mso-table-lspace: 0pt;
                 mso-table-rspace: 0pt;
                 background-color: #ffffff;
-            " width="100%">
+            "
+        width="100%">
         <tbody>
             <tr>
                 <td>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-1"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #ffffff;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
                                                             text-align: left;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
+                                                        "
+                                                    width="100%">
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="heading_block block-1" role="presentation" style="
+                                                        class="heading_block block-1" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
-                                                            <td class="pad" style="
+                                                            <td class="pad"
+                                                                style="
                                                                         padding-bottom: 10px;
                                                                         padding-left: 10px;
                                                                         padding-right: 10px;
                                                                         text-align: center;
                                                                         width: 100%;
                                                                     ">
-                                                                <h1 style="
+                                                                <h1
+                                                                    style="
                                                                             margin: 0;
                                                                             color: #121a25;
                                                                             direction: ltr;
@@ -200,7 +212,8 @@
                                                                             margin-bottom: 0;
                                                                             mso-line-height-alt: 58.8px;
                                                                         ">
-                                                                    <span class="tinyMce-placeholder" style="
+                                                                    <span class="tinyMce-placeholder"
+                                                                        style="
                                                                                 word-break: break-word;
                                                                             ">Al
                                                                         Lail</span>
@@ -208,60 +221,71 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    <div class="spacer_block block-2" style="
+                                                    <div class="spacer_block block-2"
+                                                        style="
                                                                 height: 20px;
                                                                 line-height: 20px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="image_block block-3" role="presentation" style="
+                                                        class="image_block block-3" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
-                                                            <td class="pad" style="
+                                                            <td class="pad"
+                                                                style="
                                                                         padding-bottom: 25px;
                                                                         width: 100%;
                                                                         padding-right: 0px;
                                                                         padding-left: 0px;
                                                                     ">
-                                                                <div align="center" class="alignment" style="
+                                                                <div align="center" class="alignment"
+                                                                    style="
                                                                             line-height: 10px;
                                                                         ">
-                                                                    <div class="fullWidth" style="
+                                                                    <div class="fullWidth"
+                                                                        style="
                                                                                 max-width: 170px;
                                                                             ">
-                                                                        <a href="www.example.com" style="
+                                                                        <a href="www.example.com"
+                                                                            style="
                                                                                     outline: none;
-                                                                                " tabindex="-1" target="_blank"><img
+                                                                                "
+                                                                            tabindex="-1" target="_blank"><img
                                                                                 alt="Prayer" height="auto"
-                                                                                src="images/undraw_welcoming_42an.png"
+                                                                                src="{{ asset('email/images/undraw_welcoming_42an.png') }}"
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
                                                                                         width: 100%;
-                                                                                    " title="Prayer" width="170" /></a>
+                                                                                    "
+                                                                                title="Prayer" width="170" /></a>
                                                                     </div>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    <div class="spacer_block block-4" style="
+                                                    <div class="spacer_block block-4"
+                                                        style="
                                                                 height: 5px;
                                                                 line-height: 5px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
-                                                    <div class="spacer_block block-5" style="
+                                                    <div class="spacer_block block-5"
+                                                        style="
                                                                 height: 25px;
                                                                 line-height: 25px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -272,54 +296,65 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-2"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #ffffff;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
                                                             text-align: left;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
-                                                    <div class="spacer_block block-1" style="
+                                                        "
+                                                    width="100%">
+                                                    <div class="spacer_block block-1"
+                                                        style="
                                                                 height: 45px;
                                                                 line-height: 45px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="heading_block block-2" role="presentation" style="
+                                                        class="heading_block block-2" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
-                                                            <td class="pad" style="
+                                                            <td class="pad"
+                                                                style="
                                                                         padding-bottom: 10px;
                                                                         padding-left: 10px;
                                                                         padding-right: 10px;
                                                                         text-align: center;
                                                                         width: 100%;
                                                                     ">
-                                                                <h3 style="
+                                                                <h3
+                                                                    style="
                                                                             margin: 0;
                                                                             color: #121a25;
                                                                             direction: ltr;
@@ -337,27 +372,26 @@
                                                                             margin-bottom: 0;
                                                                             mso-line-height-alt: 42px;
                                                                         ">
-                                                                    <span class="tinyMce-placeholder" style="
+                                                                    <span class="tinyMce-placeholder"
+                                                                        style="
                                                                                 word-break: break-word;
-                                                                            ">Sustainable
-                                                                        Giving
-                                                                        for
-                                                                        a
-                                                                        Better
-                                                                        Tomorrow</span>
+                                                                            ">{{ $data['subject_body'] }}</span>
                                                                 </h3>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="paragraph_block block-3" role="presentation" style="
+                                                        class="paragraph_block block-3" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 word-break: break-word;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
                                                             <td class="pad">
-                                                                <div style="
+                                                                <div
+                                                                    style="
                                                                             color: #393d47;
                                                                             direction: ltr;
                                                                             font-family: Montserrat,
@@ -379,39 +413,32 @@
                                                                             text-align: center;
                                                                             mso-line-height-alt: 28.8px;
                                                                         ">
-                                                                    <p style="
+                                                                    <p
+                                                                        style="
                                                                                 margin: 0;
                                                                             ">
-                                                                        During
-                                                                        Ramadan,
-                                                                        Muslims
-                                                                        aim
-                                                                        to
-                                                                        grow
-                                                                        spiritually
-                                                                        and
-                                                                        establish
-                                                                        stronger
-                                                                        relationships
-                                                                        with
-                                                                        Allah.
+                                                                        {{ $data['greeting_email'] }}
                                                                     </p>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                     <table border="0" cellpadding="10" cellspacing="0"
-                                                        class="button_block block-4" role="presentation" style="
+                                                        class="button_block block-4" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
                                                             <td class="pad">
                                                                 <div align="center" class="alignment">
-                                                                    <a href="www.example.com" style="
+                                                                    <a href="{{ $data['token'] }}"
+                                                                        style="
                                                                                 color: #ffffff;
                                                                                 text-decoration: none;
-                                                                            " target="_blank">>
+                                                                            "
+                                                                        target="_blank">>
                                                                         <!--[if mso]>
 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"  href="www.example.com"  style="height:41px;width:141px;v-text-anchor:middle;" arcsize="10%" fillcolor="#578d7c">
 <v:stroke dashstyle="Solid" weight="1px" color="#578d7c"/>
@@ -419,7 +446,8 @@
 <v:textbox inset="0px,0px,0px,0px">
 <center dir="false" style="color:#ffffff;font-family:sans-serif;font-size:16px">
 <!
-                                                                            [endif]--><span class="button" style="
+                                                                            [endif]--><span class="button"
+                                                                            style="
                                                                                     background-color: #578d7c;
                                                                                     border-bottom: 1px
                                                                                         solid
@@ -459,26 +487,29 @@
                                                                                     width: auto;
                                                                                     word-break: keep-all;
                                                                                     letter-spacing: normal;
-                                                                                "><span style="
+                                                                                "><span
+                                                                                style="
                                                                                         word-break: break-word;
                                                                                         line-height: 32px;
-                                                                                    ">Donate
-                                                                                now!</span></span>>
+                                                                                    ">{{ $data['button_text'] }}</span></span>>
                                                                         <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
-                                                                        </a</a>
+                                                                        </a< /a>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     </table>
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="paragraph_block block-5" role="presentation" style="
+                                                        class="paragraph_block block-5" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 word-break: break-word;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
                                                             <td class="pad">
-                                                                <div style="
+                                                                <div
+                                                                    style="
                                                                             color: #393d47;
                                                                             direction: ltr;
                                                                             font-family: Montserrat,
@@ -493,47 +524,39 @@
                                                                                     Sans,
                                                                                 Tahoma,
                                                                                 sans-serif;
-                                                                            font-size: 16px;
+                                                                            font-size: 12px;
                                                                             font-weight: 400;
                                                                             letter-spacing: 0px;
                                                                             line-height: 180%;
                                                                             text-align: center;
                                                                             mso-line-height-alt: 28.8px;
                                                                         ">
-                                                                    <p style="
+                                                                    <p
+                                                                        style="
                                                                                 margin: 0;
                                                                             ">
-                                                                        During
-                                                                        Ramadan,
-                                                                        Muslims
-                                                                        aim
-                                                                        to
-                                                                        grow
-                                                                        spiritually
-                                                                        and
-                                                                        establish
-                                                                        stronger
-                                                                        relationships
-                                                                        with
-                                                                        Allah.
+                                                                        {{ $data['foot_text'] }} <br> <a
+                                                                            href="{{ $data['token'] }}">{{ $data['token'] }}</a>
                                                                     </p>
                                                                 </div>
                                                             </td>
                                                         </tr>
                                                     </table>
-                                                    <div class="spacer_block block-6" style="
+                                                    <div class="spacer_block block-6"
+                                                        style="
                                                                 height: 25px;
                                                                 line-height: 25px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
-                                                    <div class="spacer_block block-7" style="
+                                                    <div class="spacer_block block-7"
+                                                        style="
                                                                 height: 25px;
                                                                 line-height: 25px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -544,26 +567,31 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-3"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #c4ded6;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
@@ -571,13 +599,15 @@
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
-                                                    <div class="spacer_block block-1" style="
+                                                        "
+                                                    width="100%">
+                                                    <div class="spacer_block block-1"
+                                                        style="
                                                                 height: 10px;
                                                                 line-height: 10px;
                                                                 font-size: 1px;
                                                             ">
-                                                         
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -588,26 +618,31 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-4"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #c4ded6;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
@@ -615,16 +650,20 @@
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
+                                                        "
+                                                    width="100%">
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="paragraph_block block-1" role="presentation" style="
+                                                        class="paragraph_block block-1" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 word-break: break-word;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
                                                             <td class="pad">
-                                                                <div style="
+                                                                <div
+                                                                    style="
                                                                             color: #393d47;
                                                                             direction: ltr;
                                                                             font-family: Montserrat,
@@ -646,7 +685,8 @@
                                                                             text-align: center;
                                                                             mso-line-height-alt: 28.8px;
                                                                         ">
-                                                                    <p style="
+                                                                    <p
+                                                                        style="
                                                                                 margin: 0;
                                                                             ">
                                                                         Al
@@ -661,7 +701,7 @@
                                                                         under
                                                                         of
                                                                         trademark
-                                                                        <strong>networkdeliver.my.id</strong> 
+                                                                        <strong>networkdelivr.my.id</strong>
                                                                     </p>
                                                                 </div>
                                                             </td>
@@ -676,26 +716,31 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-5"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #c4ded6;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
@@ -703,16 +748,20 @@
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
+                                                        "
+                                                    width="100%">
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="paragraph_block block-1" role="presentation" style="
+                                                        class="paragraph_block block-1" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 word-break: break-word;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
                                                             <td class="pad">
-                                                                <div style="
+                                                                <div
+                                                                    style="
                                                                             color: #393d47;
                                                                             direction: ltr;
                                                                             font-family: Montserrat,
@@ -734,7 +783,8 @@
                                                                             text-align: center;
                                                                             mso-line-height-alt: 23.400000000000002px;
                                                                         ">
-                                                                    <p style="
+                                                                    <p
+                                                                        style="
                                                                                 margin: 0;
                                                                             ">
                                                                         for
@@ -757,26 +807,31 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-6"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #121a25;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 border-radius: 0;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
@@ -784,21 +839,26 @@
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
+                                                        "
+                                                    width="100%">
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="paragraph_block block-1" role="presentation" style="
+                                                        class="paragraph_block block-1" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 word-break: break-word;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
-                                                            <td class="pad" style="
+                                                            <td class="pad"
+                                                                style="
                                                                         padding-bottom: 10px;
                                                                         padding-left: 20px;
                                                                         padding-right: 10px;
                                                                         padding-top: 10px;
                                                                     ">
-                                                                <div style="
+                                                                <div
+                                                                    style="
                                                                             color: #eeeeee;
                                                                             direction: ltr;
                                                                             font-family: Montserrat,
@@ -820,7 +880,8 @@
                                                                             text-align: center;
                                                                             mso-line-height-alt: 25.2px;
                                                                         ">
-                                                                    <p style="
+                                                                    <p
+                                                                        style="
                                                                                 margin: 0;
                                                                             ">
                                                                         Copyrights
@@ -846,26 +907,31 @@
                         </tbody>
                     </table>
                     <table align="center" border="0" cellpadding="0" cellspacing="0" class="row row-7"
-                        role="presentation" style="
+                        role="presentation"
+                        style="
                                 mso-table-lspace: 0pt;
                                 mso-table-rspace: 0pt;
                                 background-color: #ffffff;
-                            " width="100%">
+                            "
+                        width="100%">
                         <tbody>
                             <tr>
                                 <td>
                                     <table align="center" border="0" cellpadding="0" cellspacing="0"
-                                        class="row-content stack" role="presentation" style="
+                                        class="row-content stack" role="presentation"
+                                        style="
                                                 mso-table-lspace: 0pt;
                                                 mso-table-rspace: 0pt;
                                                 background-color: #ffffff;
                                                 color: #000000;
                                                 width: 680px;
                                                 margin: 0 auto;
-                                            " width="680">
+                                            "
+                                        width="680">
                                         <tbody>
                                             <tr>
-                                                <td class="column column-1" style="
+                                                <td class="column column-1"
+                                                    style="
                                                             mso-table-lspace: 0pt;
                                                             mso-table-rspace: 0pt;
                                                             font-weight: 400;
@@ -873,16 +939,20 @@
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
-                                                        " width="100%">
+                                                        "
+                                                    width="100%">
                                                     <table border="0" cellpadding="0" cellspacing="0"
-                                                        class="icons_block block-1" role="presentation" style="
+                                                        class="icons_block block-1" role="presentation"
+                                                        style="
                                                                 mso-table-lspace: 0pt;
                                                                 mso-table-rspace: 0pt;
                                                                 text-align: center;
                                                                 line-height: 0;
-                                                            " width="100%">
+                                                            "
+                                                        width="100%">
                                                         <tr>
-                                                            <td class="pad" style="
+                                                            <td class="pad"
+                                                                style="
                                                                         vertical-align: middle;
                                                                         color: #1e0e4b;
                                                                         font-family: 'Inter',
