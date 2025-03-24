@@ -24,6 +24,10 @@ Route::middleware('guest')->group(function () {
     Route::get('/forgot-password/check-email', [AuthenticatedController::class, 'checkEmail'])->name('forgot_password_check_email');
     Route::get('/change-password/{token}', [AuthenticatedController::class, 'checkToken'])->name('check_token');
     Route::put('/change-password/{token}/processing', [AuthenticatedController::class, 'processingChangePassword'])->name('processing_change_password');
+    Route::get('/register-membership', [AuthenticatedController::class, 'registerMembership'])->name('register_membership');
+    Route::post('/register-membership/process', [AuthenticatedController::class, 'processRegisterMembership'])->name('process_register_membership');
+    Route::get('/register-membership/success', [AuthenticatedController::class, 'successRegister'])->name('register_success');
+    Route::get('/Activation-account/{token}', [AuthenticatedController::class, 'activationAccount'])->name('activation_account');
 });
 //dashboard routes
 Route::middleware('auth')->group(function () {

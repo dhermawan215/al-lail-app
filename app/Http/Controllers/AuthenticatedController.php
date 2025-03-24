@@ -9,12 +9,16 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Traits\SysLogCapture;
 use App\Models\PasswordsReset;
+use App\Models\EmailVerification;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Notifications\SendForgotPassword;
 use Illuminate\Http\RedirectResponse;
+use App\Notifications\SendForgotPassword;
+use App\Notifications\sendVerificationAfterRegister;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Notification;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class AuthenticatedController extends Controller
 {
@@ -219,4 +223,93 @@ class AuthenticatedController extends Controller
             return \abort(500, 'Internal server error');
         }
     }
+    /**
+     * handle view register membership
+     */
+    public function registerMembership(): View
+    {
+        return view('auth.register');
+    }
+    /**
+     * process register membership
+     */
+    public function processRegisterMembership(Request $request): JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'confirm_password' => 'required',
+            'password' => 'required|string|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/|regex:/[@$!%*#?&]/|same:confirm_password',
+            'email' => 'required|email|unique:users,email',
+            'name' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return \response()->json($validator->errors(), 403);
+        }
+        $email = $request->email;
+        $phone = $request->phone;
+        $name = $request->name;
+        $password = Hash::make($request->password);
+        $token = time() . Str::random(30) . \date('smds');
+        $expiredAt = Carbon::now()->addMinutes(10);
+        try {
+            DB::beginTransaction();
+            //register user
+            $user = User::create([
+                'email' => $email,
+                'phone' => $phone,
+                'name' => $name,
+                'password' => $password,
+                'is_active' => 0,
+                'roles' => 'user',
+            ]);
+            $emailVerification = EmailVerification::create([
+                'email' => $email,
+                'token' => $token,
+                'expired_at' => $expiredAt,
+            ]);
+            DB::commit();
+            //create log
+            $this->captureLog([
+                'user_id' => $user->id,
+                'email' => $email,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $email . ' success register membership',
+                'status' => 'success',
+                'info' => "['user info', 'system']",
+            ]);
+            //send mail
+            $data = [
+                'email' => $email,
+                'token' => \route('activation_account', ['token' => $emailVerification->token]),
+            ];
+            Notification::route('mail', [
+                $email => $email,
+            ])->notify(new sendVerificationAfterRegister($data));
+
+            return \response()->json(['success' => \true, 'message' => 'register success', 'url' => \route('register_success')], 200);
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            //create log
+            $this->captureLog([
+                'user_id' => null,
+                'email' => $email,
+                'ip' => $request->ip(),
+                'agent' => $request->header('user-agent'),
+                'message' => $email . ' failed register membership, error: ' . $th->getMessage(),
+                'status' => 'failed',
+                'info' => "['system']",
+            ]);
+            return \response()->json(['success' => false, 'message' => 'error, please try again'], 500);
+        }
+    }
+    /**
+     * success register
+     */
+    public function successRegister(): View
+    {
+        return view('auth.register-success');
+    }
+
+    public function activationAccount() {}
 }
