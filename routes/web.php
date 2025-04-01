@@ -8,7 +8,11 @@ use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\CategoryTransactionController;
 use App\Http\Controllers\Admin\FinancialPostManagement;
 use App\Http\Controllers\Admin\MasjidManagementController;
+use App\Http\Controllers\Members\MasjidController;
+use App\Http\Controllers\Members\PosKeuanganController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsVerified;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,18 +34,35 @@ Route::middleware('guest')->group(function () {
     Route::get('/Activation-account/{token}', [AuthenticatedController::class, 'activationAccount'])->name('activation_account');
 });
 //dashboard routes
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', IsVerified::class])->group(function () {
     Route::post('/logout', [AuthenticatedController::class, 'logout']);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/user/profile', [UserProfileController::class, 'profile'])->name('profile');
     Route::post('/user/profile/update-password', [UserProfileController::class, 'updatePassword']);
     Route::post('/user/profile/update-profile', [UserProfileController::class, 'updateProfile']);
     Route::post('/user/profile/update-email', [UserProfileController::class, 'updateEmail']);
+    //management masjid for members
+    Route::prefix('members')->group(function () {
+        Route::controller(MasjidController::class)->group(function () {
+            Route::get('/masjid-management', 'index')->name('members.masjid_management');
+            Route::post('/masjid-management/list', 'listData');
+            Route::post('/masjid-management/detail', 'detail');
+        });
+        //pos keuangan controller
+        Route::controller(PosKeuanganController::class)->group(function () {
+            Route::get('/pos-keuangan', 'index')->name('members.pos_keuangan');
+            Route::post('/pos-keuangan/list', 'listData');
+            Route::post('/pos-keuangan/save', 'store');
+            Route::post('/pos-keuangan/edit', 'edit');
+            Route::post('/pos-keuangan/update', 'update');
+            Route::post('/pos-keuangan/delete', 'destroy');
+        });
+    });
 });
 
 
 //Route for admin
-Route::prefix('admin')->middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['auth', IsAdmin::class, IsVerified::class])->group(function () {
     //admin user management route
     Route::controller(UserManagementController::class)->group(function () {
         Route::get('/users-management', 'index')->name('admin.users_management');
