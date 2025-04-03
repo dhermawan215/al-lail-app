@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{route('members.masjid_management')}}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Manajemen Masjid
@@ -72,47 +72,47 @@
                 </li>
                 <hr>
                 @if (Auth::user()->roles == 'admin' || Auth::user()->roles == 'Admin')
-                    <li class="nav-item menu-open">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fa fa-th-large"></i>
-                            <p>
-                                Admin
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('admin.users_management') }}" class="nav-link ">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>User Management</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.category_transaction') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Category Transaction</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.masjid_management') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Masjid Management</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.financial_post') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Financial Post</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('admin.system_log') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>System Log</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                <li class="nav-item menu-open">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-th-large"></i>
+                        <p>
+                            Admin
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.users_management') }}" class="nav-link ">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.category_transaction') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Category Transaction</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.masjid_management') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Masjid Management</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.financial_post') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Financial Post</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.system_log') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>System Log</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 @endif
             </ul>
         </nav>

@@ -47,6 +47,10 @@ Route::middleware(['auth', IsVerified::class])->group(function () {
             Route::get('/masjid-management', 'index')->name('members.masjid_management');
             Route::post('/masjid-management/list', 'listData');
             Route::post('/masjid-management/detail', 'detail');
+            Route::post('/masjid-management/delete', 'destroy');
+            Route::post('/masjid-management/save', 'store');
+            Route::post('/masjid-management/edit', 'edit');
+            Route::post('/masjid-management/update', 'update');
         });
         //pos keuangan controller
         Route::controller(PosKeuanganController::class)->group(function () {

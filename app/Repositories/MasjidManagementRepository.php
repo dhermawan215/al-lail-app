@@ -31,7 +31,7 @@ class MasjidManagementRepository implements RepositoryInterface
 
     public function getDetailMasjid($id)
     {
-        $masjid = Masjid::with('masjidToUsers:id,name,email')->where('id', $id)->first();
+        $masjid = Masjid::with('masjidToUsers')->where('id', $id)->first();
         return $masjid;
     }
 }
