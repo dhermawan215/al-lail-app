@@ -178,7 +178,7 @@ class MasjidController extends Controller
             'name' => 'required',
             'address' => 'required',
             'phone' => 'required',
-            'image' => 'required|max:1024|mimes:png,jpg',
+            'image' => 'nullable|max:1024|mimes:png,jpg',
         ]);
 
         if ($validator->fails()) {
@@ -270,10 +270,10 @@ class MasjidController extends Controller
             if ($request->hasFile('image')) {
                 $masjidImage = $request->file('image');
                 $unlink = $this->deleteImage($query->image);
-                if ($unlink) {
-                    $path = $this->storeImage($masjidImage, 'masjids');
-                    $data['image'] = $path;
-                }
+                $path = $this->storeImage($masjidImage, 'masjids');
+                $data['image'] = $path;
+                // if ($unlink) {
+                // }
             }
             //update data
             $query->update($data);

@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use PhpParser\Node\Expr\FuncCall;
@@ -59,5 +60,12 @@ class User extends Authenticatable
     public function userToMasjid(): BelongsTo
     {
         return $this->belongsTo(Masjid::class, 'masjid_id', 'id');
+    }
+    /**
+     * relationship to transaction
+     */
+    public function userToTransaction(): HasMany
+    {
+        return $this->hasMany(Transaction::class, 'created_by', 'id');
     }
 }

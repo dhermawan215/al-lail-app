@@ -31,4 +31,11 @@ class Transaction extends Model
     {
         return $this->belongsTo(CategoryTransaction::class, 'category_id', 'id');
     }
+    /**
+     * relation to user
+     */
+    public function transactionToUser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by', 'id');
+    }
 }

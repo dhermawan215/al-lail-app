@@ -8,15 +8,15 @@ use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\CategoryTransactionController;
 use App\Http\Controllers\Admin\FinancialPostManagement;
 use App\Http\Controllers\Admin\MasjidManagementController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Members\MasjidController;
 use App\Http\Controllers\Members\PosKeuanganController;
+use App\Http\Controllers\Members\ReportController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsVerified;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingPageController::class, 'index'])->name('home_landing_page');
 
 //auth routes
 Route::middleware('guest')->group(function () {
@@ -34,7 +34,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/Activation-account/{token}', [AuthenticatedController::class, 'activationAccount'])->name('activation_account');
 });
 //dashboard routes
-Route::middleware(['auth', IsVerified::class])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthenticatedController::class, 'logout']);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/user/profile', [UserProfileController::class, 'profile'])->name('profile');
@@ -42,7 +42,7 @@ Route::middleware(['auth', IsVerified::class])->group(function () {
     Route::post('/user/profile/update-profile', [UserProfileController::class, 'updateProfile']);
     Route::post('/user/profile/update-email', [UserProfileController::class, 'updateEmail']);
     //management masjid for members
-    Route::prefix('members')->group(function () {
+    Route::prefix('members')->middleware(IsVerified::class)->group(function () {
         Route::controller(MasjidController::class)->group(function () {
             Route::get('/masjid-management', 'index')->name('members.masjid_management');
             Route::post('/masjid-management/list', 'listData');
@@ -53,13 +53,24 @@ Route::middleware(['auth', IsVerified::class])->group(function () {
             Route::post('/masjid-management/update', 'update');
         });
         //pos keuangan controller
-        Route::controller(PosKeuanganController::class)->group(function () {
+        Route::controller(PosKeuanganController::class)->middleware(IsVerified::class)->group(function () {
             Route::get('/pos-keuangan', 'index')->name('members.pos_keuangan');
             Route::post('/pos-keuangan/list', 'listData');
             Route::post('/pos-keuangan/save', 'store');
             Route::post('/pos-keuangan/edit', 'edit');
             Route::post('/pos-keuangan/update', 'update');
             Route::post('/pos-keuangan/delete', 'destroy');
+        });
+        //report financial
+        Route::controller(ReportController::class)->middleware(IsVerified::class)->group(function () {
+            Route::get('/report-financial', 'index')->name('members.report');
+            Route::post('/report-financial/save', 'store');
+            Route::post('/report-financial/income-outcome', 'listIncomeOutcome');
+            Route::post('/report-financial/financial-post', 'listFinancialPost');
+            Route::post('/report-financial/edit', 'edit');
+            Route::post('/report-financial/update', 'update');
+            Route::post('/report-financial/list', 'listData');
+            Route::post('/report-financial/download', 'download');
         });
     });
 });
