@@ -196,7 +196,7 @@ class ReportController extends Controller
         try {
             $createReport = $this->memberReport->saveReport([
                 'category' => $request->category,
-                'financial' => $request->category,
+                'financial' => $request->financial,
                 'description' => $request->description,
                 'amount' => $request->amount,
                 'transaction_date' => $request->transaction_date,

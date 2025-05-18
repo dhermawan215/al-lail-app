@@ -140,9 +140,9 @@
                             Jumlah
                         </div>
                         <div class="card-body">
-                            <h3>Pemasukan: <span class="text-primary"id="pemasukan-keuangan"></span></h3>
+                            <h3>Pemasukan: <span class="text-primary" id="pemasukan-keuangan"></span></h3>
                             <hr>
-                            <h3>Pengeluaran: <span class="text-primary"id="pengeluaran-keuangan"></span></h3>
+                            <h3>Pengeluaran: <span class="text-primary" id="pengeluaran-keuangan"></span></h3>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                         </div>
                         <div class="row">
                             <label for="fin-post">Pos Keuangan</label>
-                            <select name="finacial" id="fin-post" class="form-control"></select>
+                            <select name="financial" id="fin-post" class="form-control"></select>
                         </div>
                         <div class="row">
                             <label for="description">Deskripsi</label>

@@ -37,6 +37,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthenticatedController::class, 'logout']);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/report-chart', [DashboardController::class, 'graphicReportDashboard']);
     Route::get('/user/profile', [UserProfileController::class, 'profile'])->name('profile');
     Route::post('/user/profile/update-password', [UserProfileController::class, 'updatePassword']);
     Route::post('/user/profile/update-profile', [UserProfileController::class, 'updateProfile']);
